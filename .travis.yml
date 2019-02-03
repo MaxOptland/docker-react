@@ -7,13 +7,3 @@ before_install:
 
 script:
   - docker run maxoptland/docker-react npm run test -- --coverage
-
-deploy:
-  provider: elasticbeanstalk
-  region: "us-west-2"
-  app: "docker-react"
-  env: "Docker-env"
-  bucket_name: "elasticbeanstalk-us-west-2-{id}"
-  bucket_path: "docker-react"
-  on:
-    branch: master
